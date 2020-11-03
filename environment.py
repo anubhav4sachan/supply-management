@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import math
 import collections
@@ -7,16 +10,16 @@ from sa_env import State, Action
 
 class Environment(object):
     """
-        defining the reward distribution system
-        and the next state based on the appropriate action and
-        current state.
+    defining the reward distribution system
+    and the next state based on the appropriate action and
+    current state.
     """
 
-    def __init__(self, eps=10, W=4, max_demand=5, r_var=2, c=50, p=100):
+    def __init__(self, eps=10, W=4, max_demand=4, r_var=2, c=25, p=100):
         """
             Initializing the initial conditions of the system.
         """
-        self.eps = eps
+        self.eps = eps  # Epochs (transitions)
         self.no_of_warehouses = W
         self.d_max = max_demand  # maximum demand at warehouse w -> d(j, t)
         self.d_var = r_var  # maximum random variation in units in d(j,t) for different warehouses
@@ -95,7 +98,7 @@ class Environment(object):
 
         for i in range(self.no_of_warehouses):
             next_state.warehouse_stock[i] = min(
-                state.warehouse_stock[i] + action.shippings_to_warehouses[i] - demands[i],
+                state.warehouse_stock[i] + action.shippings[i] - demands[i],
                 self.storage_capacities[i + 1])
 
         self.t += 1
