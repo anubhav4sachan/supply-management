@@ -42,7 +42,7 @@ class VisualPlots:
         plt.ylabel("Cumulative\nprofit")
         plt.ylim(-10000, 10000)
         plt.xlabel("Time")
-        print('Profit Array at {}\n{}\n'.format(self.tt, np.cumsum(reward_arr)))
+        print('Profit Array at {}\n{}'.format(self.tt, np.cumsum(reward_arr)))
         plt.plot(range(self.env.eps), np.cumsum(reward_arr), c='red', alpha=0.9, linewidth=1.5)
         
         plt.savefig('{}/{}-2.png'.format(self.graphs_dir, self.tt), dpi=self.img_dpi)

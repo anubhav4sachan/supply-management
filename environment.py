@@ -15,7 +15,7 @@ class Environment(object):
     current state.
     """
 
-    def __init__(self, eps=10, W=4, max_demand=4, r_var=2, c=25, p=100):
+    def __init__(self, eps=30, W=4, max_demand=5, r_var=2, c=35, p=98):
         """
             Initializing the initial conditions of the system.
         """
