@@ -73,7 +73,6 @@ if __name__ == '__main__':
     policy = BaselinePolicy(0.0, 25.0, [5, 5, 5, 5], [5, 5, 10, 20])
     ep_rewards = sim(envt, policy, num_episodes=num_eps)
 
-    env = Environment()
     transitions = eps_sim(envt, policy)
 
     graphs_dir = "graphs"
