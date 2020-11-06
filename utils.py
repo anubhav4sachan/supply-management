@@ -45,4 +45,4 @@ class VisualPlots:
         print('Profit Array at {}\n{}'.format(self.tt, np.cumsum(reward_arr)))
         plt.plot(range(self.env.eps), np.cumsum(reward_arr), c='red', alpha=0.9, linewidth=1.5)
         
-        plt.savefig('{}/{}-2.png'.format(self.graphs_dir, self.tt), dpi=self.img_dpi)
+        # plt.savefig('{}/{}-2.png'.format(self.graphs_dir, self.tt), dpi=self.img_dpi)
